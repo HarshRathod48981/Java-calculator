@@ -30,13 +30,12 @@ public class Main {
     public static double getValidNumber(Scanner scanner) {
         double number;
         while (true) {
-            System.out.print("Enter a number: ");
-            String input = scanner.nextLine();
+            String input = scanner.next();
             try {
                 number = Double.parseDouble(input);
-                break; // If conversion succeeds, exit loop
+                break; // Exit loop if valid number
             } catch (NumberFormatException e) {
-                System.out.println("Invalid input. Please enter a valid number.");
+                System.out.print("Invalid input. Please enter a valid number : ");
             }
         }
         return number;
@@ -88,9 +87,9 @@ public class Main {
                     System.out.println("* You chose addition *");
                     Thread.sleep(250);
                     System.out.print("Enter your 1st number : ");
-                    double num1_add = scanner.nextDouble();
+                    double num1_add = getValidNumber(scanner);
                     System.out.print("Enter your 2nd number : ");
-                    double num2_add = scanner.nextDouble();
+                    double num2_add = getValidNumber(scanner);
                     double total_add = obj.add(num1_add, num2_add);
 
                     //System.out.print("\n");
@@ -124,9 +123,9 @@ public class Main {
                     System.out.println("* You chose subtraction *");
                     Thread.sleep(250);
                     System.out.print("Enter your 1st number : ");
-                    double num1_sub = scanner.nextDouble();
+                    double num1_sub = getValidNumber(scanner);
                     System.out.print("Enter your 2nd number : ");
-                    double num2_sub = scanner.nextDouble();
+                    double num2_sub = getValidNumber(scanner);
                     double total_sub = obj.subtract(num1_sub, num2_sub);
 
                     //System.out.print("\n");
@@ -142,7 +141,7 @@ public class Main {
                     Thread.sleep(250);
 
 
-                    System.out.println("Do you want to continue? (y/n): ");
+                    System.out.print("Do you want to continue? (y/n): ");
                     String choice2 = scanner.next();
 
                     if (choice2.equalsIgnoreCase("y")) {
@@ -160,9 +159,9 @@ public class Main {
                     System.out.println("* You chose multiplication *");
                     Thread.sleep(250);
                     System.out.print("Enter your 1st number : ");
-                    double num1_multiply = scanner.nextDouble();
+                    double num1_multiply = getValidNumber(scanner);
                     System.out.print("Enter your 2nd number : ");
-                    double num2_multiply = scanner.nextDouble();
+                    double num2_multiply = getValidNumber(scanner);
                     double total_multiply = obj.multiply(num1_multiply, num2_multiply);
 
                     //System.out.print("\n");
@@ -177,7 +176,7 @@ public class Main {
                     System.out.println("The result is : " +total_multiply);
                     Thread.sleep(250);
 
-                    System.out.println("Do you want to continue? (y/n): ");
+                    System.out.print("Do you want to continue? (y/n): ");
                     String choice3 = scanner.next();
 
                     if (choice3.equalsIgnoreCase("y")) {
@@ -195,9 +194,9 @@ public class Main {
                     System.out.println("* You chose division *");
                     Thread.sleep(250);
                     System.out.print("Enter your 1st number : ");
-                    double num1_division = scanner.nextDouble();
+                    double num1_division = getValidNumber(scanner);
                     System.out.print("Enter your 2nd number : ");
-                    double num2_division = scanner.nextDouble();
+                    double num2_division = getValidNumber(scanner);
                     double total_division = obj.divide(num1_division, num2_division);
 
                     //System.out.print("\n");
@@ -214,10 +213,10 @@ public class Main {
                     if (num2_division != 0)
                         System.out.println("The result is: " +total_division);
                     else
-                        typeEffect("Error: Division by zero!");
+                        System.out.println("Error: Division by zero!");
                     Thread.sleep(250);
 
-                    System.out.println("Do you want to continue? (y/n): ");
+                    System.out.print("Do you want to continue? (y/n): ");
                     String choice4 = scanner.next();
 
                     if (choice4.equalsIgnoreCase("y")) {
