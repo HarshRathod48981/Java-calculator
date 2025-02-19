@@ -88,9 +88,9 @@ public class Main {
                     System.out.println("* You chose addition *");
                     Thread.sleep(250);
                     System.out.print("Enter your 1st number : ");
-                    double num1_add = getValidNumber(scanner);
+                    double num1_add = scanner.nextDouble();
                     System.out.print("Enter your 2nd number : ");
-                    double num2_add = getValidNumber(scanner);
+                    double num2_add = scanner.nextDouble();
                     double total_add = obj.add(num1_add, num2_add);
 
                     //System.out.print("\n");
